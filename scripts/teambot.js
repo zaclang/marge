@@ -20,5 +20,5 @@ module.exports = (robot) => {
   robot.respond(/(add)(.*)/i, teamBot.add.bind(teamBot));
   robot.respond(/(remove)(.*)/i, teamBot.remove.bind(teamBot));
   robot.respond(/(list)(.*)/i, teamBot.list.bind(teamBot));
-  robot.respond(/(object)(.*)/i, teamBot.object.bind(teamBot));
+  robot.respond(/(who am i)(.*)/i, teamBot.whoami.bind(teamBot));
 };
