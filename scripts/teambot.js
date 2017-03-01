@@ -21,4 +21,5 @@ module.exports = (robot) => {
   robot.respond(/(remove)(.*)/i, teamBot.remove.bind(teamBot));
   robot.respond(/(list)(.*)/i, teamBot.list.bind(teamBot));
   robot.respond(/(skip)(.*)/i, teamBot.skip.bind(teamBot));
+  robot.respond(/(rewind)(.*)/i, teamBot.rewind.bind(teamBot));
 };
