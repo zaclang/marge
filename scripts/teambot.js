@@ -6,6 +6,11 @@
 // Commands:
 //   hubot add <username>
 //   hubot remove <username>
+//   hubot list
+//   hubot skip
+//   hubot rewind
+//   hubot set <username>
+//   hubot current
 //
 
 import TeamBot from '../lib/TeamBot';
