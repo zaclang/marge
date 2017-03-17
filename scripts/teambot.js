@@ -22,6 +22,7 @@ module.exports = (robot) => {
   // console.log('ROBOT:', robot.adapterName, 'MAP:', _.flatMap(robot));
 
   robot.hear(/.*github.com\/crimson-education\/.*\/pull/i, teamBot.delegate.bind(teamBot));
+  robot.hear(/welcome back marge/i, teamBot.welcomeBack.bind(teamBot));
   robot.respond(/(add)(.*)/i, teamBot.add.bind(teamBot));
   robot.respond(/(remove)(.*)/i, teamBot.remove.bind(teamBot));
   robot.respond(/(list)(.*)/i, teamBot.list.bind(teamBot));
