@@ -5,7 +5,7 @@
   "author": "Zac Lang <mw@zaclang.com>",
   "description": "",
   "scripts": {
-    "bot": "export $(cat .env) && ./bin/hubot",
+    "bot": "DEBUG=app* export $(cat .env) && ./bin/hubot",
     "test": "export $(cat .env) && mocha --compilers js:babel-register"
   },
   "dependencies": {
