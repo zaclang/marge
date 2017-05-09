@@ -30,5 +30,5 @@ module.exports = (robot) => {
   robot.respond(/(current)(.*)/i, teamBot.current.bind(teamBot));
   robot.respond(/(set)(.*)/i, teamBot.set.bind(teamBot));
   robot.respond(/(version)(.*)/i, teamBot.version.bind(teamBot));  
-  robot.router.post('/webook', (req, res) => githubEventParser.webook);
+  robot.router.post('/webook', (req, res) => githubEventParser.handler);
 };
