@@ -14,10 +14,11 @@
 //
 
 import TeamBot from '../lib/TeamBot';
+import githubEventParser from '../lib/GithubEventParser';
 
 module.exports = (robot) => {
-
   let teamBot = new TeamBot(robot);
+  
 
   robot.hear(/.*github.com\/crimson-education\/.*\/pull/i, teamBot.delegate.bind(teamBot));
   robot.hear(/welcome back @?marge/i, teamBot.welcomeBack.bind(teamBot));
@@ -29,5 +30,5 @@ module.exports = (robot) => {
   robot.respond(/(current)(.*)/i, teamBot.current.bind(teamBot));
   robot.respond(/(set)(.*)/i, teamBot.set.bind(teamBot));
   robot.respond(/(version)(.*)/i, teamBot.version.bind(teamBot));  
-  robot.router.post('/webook', teamBot.webook.bind(teambot));
+  robot.router.post('/webook', (req, res) => githubEventParser.webook);
 };
