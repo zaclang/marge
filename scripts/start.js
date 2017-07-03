@@ -29,7 +29,8 @@ module.exports = (robot) => {
   robot.respond(/(rewind)(.*)/i, teamBot.rewind.bind(teamBot));
   robot.respond(/(current)(.*)/i, teamBot.current.bind(teamBot));
   robot.respond(/(set)(.*)/i, teamBot.set.bind(teamBot));
-  robot.respond(/(version)(.*)/i, teamBot.version.bind(teamBot));  
+  robot.respond(/(version)(.*)/i, teamBot.version.bind(teamBot)); 
+  robot.respond(/(advise|advice)/ig, teamBot.advice.bind(teamBot));  
 
   //robot.router.post('/webook', (req, res) => {
   //  let data = req.body.payload != null ? JSON.parse(req.body.payload) : req.body;
