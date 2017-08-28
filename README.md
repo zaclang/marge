@@ -1,6 +1,5 @@
 TODO
 
-
-- async / await
 - tests
-- 'deploy to heroku' button - https://devcenter.heroku.com/articles/heroku-button
+- es6 Set() instead of arrays
+- serverless / lambda
