@@ -14,7 +14,6 @@
 //
 
 import TeamBot from '../lib/TeamBot';
-import githubEventParser from '../lib/GithubEventParser';
 
 module.exports = (robot) => {
   let teamBot = new TeamBot(robot);
@@ -28,7 +27,7 @@ module.exports = (robot) => {
   robot.respond(/(skip)(.*)/i, teamBot.delegate.bind(teamBot));
   robot.respond(/(rewind)(.*)/i, teamBot.rewind.bind(teamBot));
   robot.respond(/(current)(.*)/i, teamBot.current.bind(teamBot));
-  robot.respond(/(set)(.*)/i, teamBot.set.bind(teamBot));
+  robot.respond(/(assign|set)(.*)/i, teamBot.delegate.bind(teamBot));
   robot.respond(/(version)(.*)/i, teamBot.version.bind(teamBot));
   robot.respond(/(advise|advice)/ig, teamBot.advice.bind(teamBot));
   robot.respond(/(price check)/ig, teamBot.priceCheck.bind(teamBot));
