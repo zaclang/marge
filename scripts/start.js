@@ -13,24 +13,24 @@
 //   hubot current
 //
 
-import TeamBot from "../lib/TeamBot";
+import Marge from "../lib/Marge";
 
 module.exports = robot => {
-  let teamBot = new TeamBot(robot);
+  let marge = new Marge(robot);
 
-  robot.hear(/.*github.com\/.*\/.*\/pull/i, teamBot.delegate.bind(teamBot));
-  robot.hear(/welcome back @?marge/i, teamBot.welcomeBack.bind(teamBot));
-  robot.respond(/(add)(.*)/i, teamBot.add.bind(teamBot));
-  robot.respond(/(remove)(.*)/i, teamBot.remove.bind(teamBot));
-  robot.respond(/(list)(.*)/i, teamBot.list.bind(teamBot));
-  robot.respond(/(skip)(.*)/i, teamBot.delegate.bind(teamBot));
-  robot.respond(/(rewind)(.*)/i, teamBot.rewind.bind(teamBot));
-  robot.respond(/(current)(.*)/i, teamBot.current.bind(teamBot));
-  robot.respond(/(assign|set)(.*)/i, teamBot.delegate.bind(teamBot));
-  robot.respond(/(version)(.*)/i, teamBot.version.bind(teamBot));
-  robot.respond(/(advise|advice)/gi, teamBot.advice.bind(teamBot));
-  robot.respond(/(price check)/gi, teamBot.priceCheck.bind(teamBot));
-  robot.respond(/(reset)/gi, teamBot.reset.bind(teamBot));
+  robot.hear(/.*github.com\/.*\/.*\/pull/i, marge.delegate.bind(marge));
+  robot.hear(/welcome back @?marge/i, marge.welcomeBack.bind(marge));
+  robot.respond(/(add)(.*)/i, marge.add.bind(marge));
+  robot.respond(/(remove)(.*)/i, marge.remove.bind(marge));
+  robot.respond(/(list)(.*)/i, marge.list.bind(marge));
+  robot.respond(/(skip)(.*)/i, marge.delegate.bind(marge));
+  robot.respond(/(rewind)(.*)/i, marge.rewind.bind(marge));
+  robot.respond(/(current)(.*)/i, marge.current.bind(marge));
+  robot.respond(/(assign|set)(.*)/i, marge.delegate.bind(marge));
+  robot.respond(/(version)(.*)/i, marge.version.bind(marge));
+  robot.respond(/(advise|advice)/gi, marge.advice.bind(marge));
+  robot.respond(/(price check)/gi, marge.priceCheck.bind(marge));
+  robot.respond(/(reset)/gi, marge.reset.bind(marge));
 
   //robot.router.post('/webook', (req, res) => {
   //  let data = req.body.payload != null ? JSON.parse(req.body.payload) : req.body;
