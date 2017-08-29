@@ -6,7 +6,9 @@
   "description": "",
   "scripts": {
     "bot": "DEBUG=app* export $(cat .env) && ./bin/hubot.sh",
-    "test": "export $(cat .env) && mocha --compilers js:babel-register"
+    "test": "export $(cat .env) && mocha --compilers js:babel-register",
+    "pretty": "./node_modules/.bin/prettier --write --tab-width 2 \"**/*.js\"",
+    "precommit": "npm run pretty"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -29,6 +31,8 @@
   "devDependencies": {
     "babel-cli": "6.9.0",
     "chai": "3.5.0",
-    "mocha": "2.4.5"
+    "husky": "^0.14.3",
+    "mocha": "2.4.5",
+    "prettier": "^1.6.0"
   }
 }

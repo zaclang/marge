@@ -13,9 +13,9 @@
 //   hubot current
 //
 
-import TeamBot from '../lib/TeamBot';
+import TeamBot from "../lib/TeamBot";
 
-module.exports = (robot) => {
+module.exports = robot => {
   let teamBot = new TeamBot(robot);
 
   robot.hear(/.*github.com\/.*\/.*\/pull/i, teamBot.delegate.bind(teamBot));
@@ -28,9 +28,9 @@ module.exports = (robot) => {
   robot.respond(/(current)(.*)/i, teamBot.current.bind(teamBot));
   robot.respond(/(assign|set)(.*)/i, teamBot.delegate.bind(teamBot));
   robot.respond(/(version)(.*)/i, teamBot.version.bind(teamBot));
-  robot.respond(/(advise|advice)/ig, teamBot.advice.bind(teamBot));
-  robot.respond(/(price check)/ig, teamBot.priceCheck.bind(teamBot));
-  robot.respond(/(reset)/ig, teamBot.reset.bind(teamBot));  
+  robot.respond(/(advise|advice)/gi, teamBot.advice.bind(teamBot));
+  robot.respond(/(price check)/gi, teamBot.priceCheck.bind(teamBot));
+  robot.respond(/(reset)/gi, teamBot.reset.bind(teamBot));
 
   //robot.router.post('/webook', (req, res) => {
   //  let data = req.body.payload != null ? JSON.parse(req.body.payload) : req.body;
