@@ -10,6 +10,12 @@
     "pretty": "./node_modules/.bin/prettier --write --tab-width 2 \"**/*.js\"",
     "precommit": "npm run pretty"
   },
+  "lint-staged": {
+    "*.js": [
+        "npm run pretty",
+        "git add"
+    ]
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "babel-plugin-add-module-exports": "0.1.2",
