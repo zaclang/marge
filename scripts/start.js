@@ -29,7 +29,7 @@ module.exports = robot => {
   robot.respond(/(current)(.*)/i, marge.current.bind(marge));
   robot.respond(/(assign|set)(.*)/i, marge.delegate.bind(marge));
   robot.respond(/(version)(.*)/i, marge.version.bind(marge));
-  robot.respond(/(advise|advice)/gi, marge.advice.bind(marge));
+  robot.respond(/(advise|advice) for (.*)/i, marge.advice.bind(marge));
   robot.respond(/(price check)/gi, marge.priceCheck.bind(marge));
   robot.respond(/(reset)/gi, marge.reset.bind(marge));
 
