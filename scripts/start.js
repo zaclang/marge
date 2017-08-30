@@ -11,7 +11,8 @@
 //   hubot rewind
 //   hubot set <username>
 //   hubot current
-//
+//   hubot advice
+//   hubot price check
 
 import Marge from "../lib/Marge";
 

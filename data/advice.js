@@ -20,7 +20,7 @@ export default [
   "PHP is rarely the bottleneck.",
   "start running and don't look back",
   "doing nothing is hard, you never know when you're done",
-  "no matter how smart you are you can never convince someone stupid that they are stupid.",
+  "no matter how smart you are, you can never convince someone stupid that they are stupid.",
   "you did not trip and fall. You attacked the floor and I believe you are winning.",
   "it's so simple to be wise. Just think of something stupid to say and then don't say it.",
   "do you know what happened to the neanderthals? We ate them.",
