@@ -30,7 +30,6 @@ module.exports = robot => {
   robot.respond(/(assign|set)(.*)/i, marge.delegate.bind(marge));
   robot.respond(/(version)(.*)/i, marge.version.bind(marge));
   robot.respond(/(advise|advice)( for )?(.*)?$/i, marge.advice.bind(marge));
-  robot.respond(/(price check)/gi, marge.priceCheck.bind(marge));
   robot.respond(/(reset)/gi, marge.reset.bind(marge));
 
   //robot.router.post('/webook', (req, res) => {
