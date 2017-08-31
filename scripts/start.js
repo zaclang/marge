@@ -30,11 +30,14 @@ module.exports = robot => {
   robot.respond(/(reset)/gi, marge.reset.bind(marge));
 
   // github
-  robot.hear(/.*github.com\/.*\/.*\/pull/i, marge.delegate.bind(marge));
-  robot.respond(/(skip)(.*)/i, marge.delegate.bind(marge));
+  robot.hear(
+    /.*github.com\/.*\/.*\/pull/i,
+    marge.assignPullRequest.bind(marge)
+  );
+  robot.respond(/(skip)(.*)/i, marge.assignPullRequest.bind(marge));
   robot.respond(/(rewind)(.*)/i, marge.rewind.bind(marge));
   robot.respond(/(current)(.*)/i, marge.current.bind(marge));
-  robot.respond(/(assign|set)(.*)/i, marge.delegate.bind(marge));
+  robot.respond(/(assign|set)(.*)/i, marge.assignPullRequest.bind(marge));
 
   // advice
   robot.respond(/(advise|advice)( for )?(.*)?$/i, marge.advice.bind(marge));
