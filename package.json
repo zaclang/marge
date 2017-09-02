@@ -8,8 +8,7 @@
     "bot": "DEBUG=app* export $(cat .env) && ./bin/hubot.sh",
     "test": "export $(cat .env) && mocha --compilers js:babel-register",
     "pretty": "./node_modules/.bin/prettier --write --tab-width 2 \"**/*.js\"",
-    "precommit": "npm run pretty",
-    "flow": "flow"    
+    "precommit": "npm run pretty"
   },
   "lint-staged": {
     "*.js": [
@@ -39,7 +38,6 @@
   "devDependencies": {
     "babel-cli": "6.9.0",
     "chai": "3.5.0",
-    "flow-bin": "^0.54.0",
     "husky": "^0.14.3",
     "mocha": "2.4.5",
     "prettier": "^1.6.0"
