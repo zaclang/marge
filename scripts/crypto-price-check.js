@@ -1,5 +1,5 @@
 // Description:
-//   Cryptocurrency price checker
+//   Crypto currency price checker
 //
 // Dependencies:
 //   None

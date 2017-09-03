@@ -35,10 +35,7 @@ module.exports = robot => {
     marge.assignPullRequest.bind(marge)
   );
   robot.respond(/(skip)(.*)/i, marge.assignPullRequest.bind(marge));
+  robot.respond(/(assign|set)(.*)/i, marge.assignPullRequest.bind(marge));
   robot.respond(/(rewind)(.*)/i, marge.rewind.bind(marge));
   robot.respond(/(current)(.*)/i, marge.current.bind(marge));
-  robot.respond(/(assign|set)(.*)/i, marge.assignPullRequest.bind(marge));
-
-  // advice
-  robot.respond(/(advise|advice)( for )?(.*)?$/i, marge.advice.bind(marge));
 };
