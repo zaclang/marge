@@ -10,32 +10,32 @@
 // Commands:
 //   hubot price check
 
-import debugLogger from "debug-logger";
-const debug = debugLogger("app:crypto-checker");
-
 import axios from "axios";
-const CRYPTO_COIN = "ETH";
 
-// TODO: btc markets only supports AUD right now - find something else..
-const DEFAULT_CURRENCY = "AUD";
-const CRYPTO_ENDPOINT = (coin, currency) =>
-  `https://api.btcmarkets.net/market/${coin}/${currency ||
-    DEFAULT_CURRENCY}/tick`;
+const CRYPTO_COIN = "ETH";
+const DEFAULT_CURRENCY = "AUD"; // TODO: btc markets only supports AUD right now - find something else..
 
 module.exports = robot => {
-  robot.respond(/price check (AUD)?/i, priceCheck);
+  robot.respond(/price check/i, priceCheck);
 };
+
+function getEndpoint(coin, currency) {
+  return `https://api.btcmarkets.net/market/${coin}/${currency}/tick`;
+}
 
 async function priceCheck(msg) {
   const username = msg.message.user.name;
 
-  const currency = msg.match[1] || DEFAULT_CURRENCY;
-  const endpoint = CRYPTO_ENDPOINT(CRYPTO_COIN, currency.toUpperCase());
-
-  const { data: { lastPrice } } = await axios.get(endpoint);
-  return msg.send(
-    lastPrice
-      ? `${username}, The last price for ${CRYPTO_COIN} was $${lastPrice} ${currency}`
-      : "no idea"
-  );
+  try {
+    const { data: { lastPrice } } = await axios.get(
+      getEndpoint(CRYPTO_COIN, DEFAULT_CURRENCY)
+    );
+    msg.send(
+      lastPrice
+        ? `${username}, The last price for ${CRYPTO_COIN} was $${lastPrice} ${DEFAULT_CURRENCY}`
+        : "I have no idea!"
+    );
+  } catch (error) {
+    msg.send(error);
+  }
 }
