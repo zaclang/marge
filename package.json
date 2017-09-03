@@ -6,7 +6,7 @@
   "description": "",
   "scripts": {
     "bot": "DEBUG=app* node_modules/.bin/babel-hubot --name 'marge'",
-    "start": "npm run bot -a slack",
+    "start": "npm run bot -a 'slack'",
     "pretty": "./node_modules/.bin/prettier --write --tab-width 2 \"**/*.js\"",
     "precommit": "npm run pretty"
   },

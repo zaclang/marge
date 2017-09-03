@@ -25,6 +25,8 @@ Prettier runs on each commit, thanks to Husky. Blame them
 
 ### Run it locally:
 
+`brew install redis`
+
 `npm install`
 
 `npm run bot`
