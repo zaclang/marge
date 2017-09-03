@@ -5,7 +5,7 @@
   "author": "Zac Lang <mw@zaclang.com>",
   "description": "",
   "scripts": {
-    "bot": "DEBUG=app* ./bin/hubot.sh",
+    "bot": "DEBUG=app* node_modules/.bin/babel-hubot --name 'marge' -a slack",
     "pretty": "./node_modules/.bin/prettier --write --tab-width 2 \"**/*.js\"",
     "precommit": "npm run pretty"
   },

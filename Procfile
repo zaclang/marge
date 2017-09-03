@@ -1,1 +1,1 @@
-web: bin/hubot.sh -a slack
+web: npm run bot
