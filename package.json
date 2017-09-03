@@ -1,8 +1,8 @@
 {
-  "name": "team-channel-bot",
+  "name": "marge",
   "version": "1.0.0",
   "private": true,
-  "author": "Zac Lang <mw@zaclang.com>",
+  "author": "Zac Lang <me@zaclang.com>",
   "description": "",
   "scripts": {
     "bot": "DEBUG=app* node_modules/.bin/babel-hubot --name 'marge'",
@@ -13,7 +13,7 @@
   "lint-staged": {
     "*.js": [
       "npm run pretty",
-      "git add"
+      "git add ."
     ]
   },
   "dependencies": {
