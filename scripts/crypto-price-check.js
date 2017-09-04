@@ -19,16 +19,12 @@ module.exports = robot => {
   robot.respond(/price check/i, priceCheck);
 };
 
-function getEndpoint(coin, currency) {
-  return `https://api.btcmarkets.net/market/${coin}/${currency}/tick`;
-}
-
 async function priceCheck(msg) {
   const username = msg.message.user.name;
 
   try {
     const { data: { lastPrice } } = await axios.get(
-      getEndpoint(CRYPTO_COIN, DEFAULT_CURRENCY)
+      `https://api.btcmarkets.net/market/${CRYPTO_COIN}/${DEFAULT_CURRENCY}/tick`
     );
     msg.send(
       lastPrice
