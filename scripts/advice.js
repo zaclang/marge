@@ -32,6 +32,6 @@ async function getAdvice(response) {
     const res = Math.random() >= 0.5 ? advice : response.random(ADVICE);
     response.send(`${target || username}, ${res}`);
   } catch (error) {
-    response.send(error);
+    response.send(error.message);
   }
 }

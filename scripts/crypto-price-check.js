@@ -32,6 +32,6 @@ async function priceCheck(msg) {
         : "I have no idea!"
     );
   } catch (error) {
-    msg.send(error);
+    msg.send(error.message);
   }
 }
