@@ -17,7 +17,7 @@
     ]
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "babel-core": "^6.26.0",
     "babel-hubot": "^0.2.0",
     "babel-plugin-add-module-exports": "0.1.2",
